@@ -38,6 +38,7 @@
                 <th>From Amount</th>
                 <th>To Currency</th>
                 <th>To Amount</th>
+                <th>Action</th>
             </thead>
             <tbody>
                 <c:forEach var="hL" items="${historyList}">
@@ -47,6 +48,7 @@
                         <td>${hL.fromAmt}</td>
                         <td>${hL.toCurrency}</td>
                         <td>${hL.toAmt}</td>
+                        <td><a class="button is-small is-danger" href="/history/delete/${hL.id}">Delete</a></td>
                     </tr>
                 </c:forEach>
             </tbody>

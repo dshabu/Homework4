@@ -10,7 +10,7 @@ import java.util.Date;
 public class History {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long id;
+    public int id;
 
     @Column(name = "from_amt")
     public double fromAmt;
@@ -31,7 +31,7 @@ public class History {
     public History() {
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

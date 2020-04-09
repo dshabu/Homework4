@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -99,6 +100,12 @@ public class MainController {
         ModelAndView mv = new ModelAndView("history");
         mv.addObject("historyList", historyRepo.findAllByOrderByInsertedDesc());
         return mv;
+    }
+
+    @GetMapping("/history/delete/{id}")
+    public ModelAndView deleteHistory(@PathVariable("id") int id) {
+        historyRepo.deleteById(id);
+        return getHistory();
     }
 
     private JSONObject fetchJSONObject(String urlString) throws IOException {

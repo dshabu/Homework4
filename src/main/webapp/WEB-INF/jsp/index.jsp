@@ -67,7 +67,7 @@
             </select>
         </div>
 
-        <button class="button" id="convert" style="grid-column-start: 2">Convert</button>
+        <button class="button is-primary" id="convert" style="grid-column-start: 2">Convert</button>
     </form>
 </body>
 </html>
